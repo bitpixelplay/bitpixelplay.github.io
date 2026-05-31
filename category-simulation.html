@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulation Games | Play Free Online | bit pixel play</title>
+  <meta name="description" content="Play the best free Simulation games online on bit pixel play. Page 1 of our curated collection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: rgba(22, 28, 45, 0.7);
+      --accent: #6c5ce7;
+      --accent-glow: rgba(108, 92, 231, 0.4);
+      --text-white: #ffffff;
+      --text-gray: #a0aec0;
+      --neon-green: #00f2fe;
+      --neon-pink: #ff007f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: radial-gradient(circle at top, #1a1b36 0%, var(--bg-dark) 70%);
+      color: var(--text-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Top Navbar Styles */
+    .top-navbar {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .top-nav-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-nav-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--text-gray) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .top-nav-logo span {
+      -webkit-text-fill-color: initial;
+    }
+
+    .top-nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-nav-item {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .top-nav-item:hover, .top-nav-item.active {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Dropdown Styles */
+    .top-nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .top-nav-dropdown-btn {
+      background: none;
+      border: none;
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .top-nav-dropdown-btn:hover, .top-nav-dropdown.active .top-nav-dropdown-btn {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .top-nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: #111519;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      z-index: 1010;
+      padding: 8px 0;
+      margin-top: 5px;
+    }
+
+    .top-nav-dropdown-content a {
+      color: var(--text-gray);
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .top-nav-dropdown-content a:hover, .top-nav-dropdown-content a.active {
+      color: var(--text-white);
+      background: var(--accent);
+    }
+
+    .top-nav-dropdown:hover .top-nav-dropdown-content {
+      display: block;
+    }
+
+    /* Toggle button for Mobile */
+    .top-nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1020;
+    }
+
+    .top-nav-toggle .toggle-bar {
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      padding: 15px 20px 8px;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      display: none;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--text-gray) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Categories Navigation inside Footer */
+    .categories-nav {
+      padding: 15px 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .categories-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .category-link {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .category-link:hover, .category-link.active {
+      color: var(--text-white);
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 16px;
+      box-shadow: 0 0 40px var(--accent-glow);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .thumbnail-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      overflow: hidden;
+      background: #000;
+    }
+
+    .thumbnail-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .card:hover .thumbnail-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-white);
+    }
+
+    .card-description {
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-gray);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .play-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--accent);
+      color: var(--text-white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+    }
+
+    .play-btn:hover {
+      background: #7d6ef9;
+      box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+    }
+
+    .play-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 40px;
+      padding: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .page-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-gray);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .page-link:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-white);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .page-link.active {
+      background: var(--accent);
+      color: var(--text-white);
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+    }
+
+    .page-link.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .page-arrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--text-gray);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .top-nav-toggle {
+        display: flex;
+      }
+
+      .top-nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 250px;
+        height: calc(100vh - 70px);
+        background: #0b0f19;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px 20px;
+        gap: 10px;
+        transition: right 0.3s ease;
+        z-index: 999;
+      }
+
+      .top-nav-menu.open {
+        right: 0;
+      }
+
+      .top-nav-item, .top-nav-dropdown-btn {
+        width: 100%;
+        text-align: left;
+        padding: 12px 15px;
+      }
+
+      .top-nav-dropdown-content {
+        position: static;
+        display: block;
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        margin-top: 0;
+        padding-left: 15px;
+      }
+
+      .top-nav-toggle.active .toggle-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .top-nav-toggle.active .toggle-bar:nth-child(2) {
+        opacity: 0;
+      }
+      .top-nav-toggle.active .toggle-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+      .subtitle {
+        font-size: 0.8rem;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="top-navbar">
+    <div class="top-nav-container">
+      <a href="index.html" class="top-nav-logo">
+        <span>🎮</span> bit pixel play
+      </a>
+
+      <button class="top-nav-toggle" id="topNavToggle" aria-label="Toggle menu">
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+      </button>
+      <div class="top-nav-menu" id="topNavMenu">
+        <a href="index.html" class="top-nav-item ">Home</a>
+        <a href="category-casual.html" class="top-nav-item ">Casual</a>
+        <a href="category-puzzle.html" class="top-nav-item ">Puzzle</a>
+        <a href="category-simulation.html" class="top-nav-item active">Simulation</a>
+        <a href="category-adventure.html" class="top-nav-item ">Adventure</a>
+        <a href="category-agility.html" class="top-nav-item ">Agility</a>
+        <a href="category-racing-driving.html" class="top-nav-item ">Racing & Driving</a>
+        <div class="top-nav-dropdown ">
+          <button class="top-nav-dropdown-btn">More ▾</button>
+          <div class="top-nav-dropdown-content">
+            <a href="category-shooter.html" class="">Shooter</a>
+            <a href="category-dress-up.html" class="">Dress-up</a>
+            <a href="category-battle.html" class="">Battle</a>
+            <a href="category-match-3.html" class="">Match-3</a>
+            <a href="category-strategy.html" class="">Strategy</a>
+            <a href="category-merge.html" class="">Merge</a>
+            <a href="category-educational.html" class="">Educational</a>
+            <a href="category-cards.html" class="">Cards</a>
+            <a href="category-mahjong-connect.html" class="">Mahjong & Connect</a>
+            <a href="category-bubble-shooter.html" class="">Bubble Shooter</a>
+            <a href="category-io.html" class="">.IO</a>
+            <a href="category-boardgames.html" class="">Boardgames</a>
+            <a href="category-football.html" class="">Football</a>
+            <a href="category-sports.html" class="">Sports</a>
+            <a href="category-care.html" class="">Care</a>
+            <a href="category-quiz.html" class="">Quiz</a>
+            <a href="category-cooking.html" class="">Cooking</a>
+            <a href="category-basketball.html" class="">Basketball</a>
+            <a href="category-art.html" class="">Art</a>
+            <a href="category-jigsaw.html" class="">Jigsaw</a>
+          </div>
+        </div>
+        <div class="top-nav-dropdown ">
+          <button class="top-nav-dropdown-btn">About ▾</button>
+          <div class="top-nav-dropdown-content">
+            <a href="contact.html" class="">Contact Us</a>
+            <a href="privacy.html" class="">Privacy Policy</a>
+            <a href="terms.html" class="">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Simulation Games</h1>
+    <p class="subtitle">Play the best free Simulation games online on bit pixel play. Page 1 of our curated collection.</p>
+  </header>
+
+    <!-- Dedicated Search Bar Row -->
+  <div class="search-bar-row">
+    <div class="search-bar-row-container">
+      <input type="text" id="searchInput" placeholder="Search for your favorite games..." autocomplete="off">
+      <div id="searchSuggestions" class="search-suggestions"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+            <!-- Card: Gas Station: Junkyard Tycoon -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/302.webp" alt="Gas Station: Junkyard Tycoon Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Gas Station: Junkyard Tycoon</h2>
+          <p class="card-description">Build Your Dream Gas Station and Garage Tycoon Empire! Take charge in Gas Station Simulator Inc., the ultimate game for oil tycoon enthusiasts, idle games managers, and aspiring entrepreneurs! Manage, rebuild, and expand the gas station simulator, clean up your junkyard, and fix cars in this immersive and rewarding gas station simulator.</p>
+          <div class="tag-container">
+            <span class="tag">Simulation</span>
+          </div>
+          <a href="gas-station-junkyard-tycoon.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Idle Trade Routes -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/303.webp" alt="Idle Trade Routes Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Idle Trade Routes</h2>
+          <p class="card-description">Command a growing fleet of merchant ships across a shimmering ocean in Idle Trade Routes. Link bustling islands, auto‑dock at busy ports, and optimize trade lines to keep goods flowing. Unlock new ships, hire captains, and chase bigger contracts as your profits grow even while you’re away.</p>
+          <div class="tag-container">
+            <span class="tag">Simulation</span>
+<span class="tag">Strategy</span>
+          </div>
+          <a href="idle-trade-routes.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Brainrot Mega Parkour -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/308.webp" alt="Brainrot Mega Parkour Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Brainrot Mega Parkour</h2>
+          <p class="card-description">Step into the wildest parkour adventure yet. Brainrot Mega Parkour brings together four intense modes, forty handcrafted levels, and a cast of hilarious characters in a single high-speed package. Whether you’re climbing an endless tower, racing across a platform full of traps, escaping a rolling lava ball, or surviving a lava flood, every level pushes your reflexes and timing to the limit.</p>
+          <div class="tag-container">
+            <span class="tag">Casual</span>
+<span class="tag">Simulation</span>
+          </div>
+          <a href="brainrot-mega-parkour.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Gym Simulator - Tycoon -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/330.webp" alt="Gym Simulator - Tycoon Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Gym Simulator - Tycoon</h2>
+          <p class="card-description">Welcome to Gym Simulator - Tycoon, where your business dreams take shape in the world of fitness. In this engaging online game, you'll manage and grow a network of gyms—upgrade your facilities, invest in top-notch equipment, and fine-tune every detail to run smoothly. Whether you're playing on your phone or computer, dive into a game where strategy meets a passion for health. With dynamic gameplay, you'll turn a small operation into a booming fitness brand.</p>
+          <div class="tag-container">
+            <span class="tag">Simulation</span>
+          </div>
+          <a href="gym-simulator-tycoon.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: 2 Player Games Kids Kitchen -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/339.webp" alt="2 Player Games Kids Kitchen Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">2 Player Games Kids Kitchen</h2>
+          <p class="card-description">Do you want to run your own restaurant? Want to experience the blend of collaboration and cooking fun? Join H5games4u's best restaurant tycoon game and enjoy cooking fun. You will engage in different gaming modes. The best part is that you can work together with your friends in the virtual restaurant!</p>
+          <div class="tag-container">
+            <span class="tag">Cooking</span>
+<span class="tag">Simulation</span>
+          </div>
+          <a href="2-player-games-kids-kitchen.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Cinema Business - Idle Games -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/353.webp" alt="Cinema Business - Idle Games Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Cinema Business - Idle Games</h2>
+          <p class="card-description">Build and manage your own cinema empire! 
+Unlock movie rooms, snack and burger corners to attract more customers.
+Hire staff, upgrade facilities, and keep your theater running smoothly.
+Earn cash even while you’re offline and grow your business.
+Become the ultimate cinema tycoon in this fun idle arcade game!</p>
+          <div class="tag-container">
+            <span class="tag">Casual</span>
+<span class="tag">Simulation</span>
+          </div>
+          <a href="cinema-business-idle-games.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Dictator Simulator: 1984 -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/354.webp" alt="Dictator Simulator: 1984 Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Dictator Simulator: 1984</h2>
+          <p class="card-description">Make choices as the Supreme Leader of a dystopian state. Maintain control, balance resources, and crush opposition—or be overthrown!</p>
+          <div class="tag-container">
+            <span class="tag">Simulation</span>
+<span class="tag">Strategy</span>
+          </div>
+          <a href="dictator-simulator-1984.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Italian Brainrot Survive Parkour -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/374.webp" alt="Italian Brainrot Survive Parkour Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Italian Brainrot Survive Parkour</h2>
+          <p class="card-description">Step into the absurd universe of Italian Brainrot Survive Parkour, where chaos, memes, and tricky obstacle runs collide! Pick your favorite Brainrot characters, master wild parkour tracks, and survive each hilarious stage with your reflexes and timing.</p>
+          <div class="tag-container">
+            <span class="tag">Casual</span>
+<span class="tag">Simulation</span>
+          </div>
+          <a href="italian-brainrot-survive-parkour.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Teacher Simulator Christmas Exam -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/375.webp" alt="Teacher Simulator Christmas Exam Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Teacher Simulator Christmas Exam</h2>
+          <p class="card-description">Welcome to the funniest and busiest Christmas classroom ever! Teacher Simulator: Christmas Exam is a charming and playful teacher class simulator where you act as a holiday teacher. Manage orders, hand out exam papers, grade tests, etc. Different classes are scheduled on different days of the week, such as art class, geography class, math class, and so on.</p>
+          <div class="tag-container">
+            <span class="tag">Quiz</span>
+<span class="tag">Simulation</span>
+          </div>
+          <a href="teacher-simulator-christmas-exam.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Dino Game -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/379.webp" alt="Dino Game Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Dino Game</h2>
+          <p class="card-description">Play Dino Game online! An offline-style dinosaur run for 1–3 players. Jump cacti, dodge flyers, unlock dinos, and race for high scores. Dino Game brings the classic offline dinosaur run to life with fast, responsive gameplay and local multiplayer. Dash across an endless desert, jump over cacti, and duck under swooping dinos as the speed steadily climbs. Play solo to beat your personal best, or switch to 2-player and 3-player modes to race friends on the same device.</p>
+          <div class="tag-container">
+            <span class="tag">Casual</span>
+<span class="tag">Simulation</span>
+          </div>
+          <a href="dino-game.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Steal Brainrot Arena -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/382.webp" alt="Steal Brainrot Arena Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Steal Brainrot Arena</h2>
+          <p class="card-description">Steal Brainrot Arena is a fast-paced collection and heist game where every match turns into a battle of wallets, wits, and sneaky steals. Play solo in 1 Player mode or team up and compete in 2 Player mode as you build the ultimate Brainrot lineup. With over 45+ brainrot characters to discover, your goal is simple: buy better Brainrots, earn more, and create the most stacked collection in the arena.</p>
+          <div class="tag-container">
+            <span class="tag">Casual</span>
+<span class="tag">Simulation</span>
+          </div>
+          <a href="steal-brainrot-arena.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Cat From Hell Cat Simulator -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/387.webp" alt="Cat From Hell Cat Simulator Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Cat From Hell Cat Simulator</h2>
+          <p class="card-description">Become the troublemaking cat in Cat From Hell - Cat Simulator. Run wild inside Granny’s house, knocking things over and making a mess, such as breaking plates, throwing balls, smashing fish tanks, etc. Escape before she catches you. Explore, prank, and cause chaos in this hilarious and mischievous cat simulator. Every corner hides a secret that can be destroyed, and discover new challenges.</p>
+          <div class="tag-container">
+            <span class="tag">Casual</span>
+<span class="tag">Simulation</span>
+          </div>
+          <a href="cat-from-hell-cat-simulator.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Sandbox Island War -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/388.webp" alt="Sandbox Island War Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Sandbox Island War</h2>
+          <p class="card-description">Get ready for a wonderful pixel battle in Pixel Island War! This strategy game brings you to a wonderful pixel world. Here your task is to conquer islands and expand your empire. Build bases, gather resources and prepare for fierce battles on different islands. For example, choose an island to place humans on. Humans will build towns and multiply. Choose sheep to produce wool and meat.</p>
+          <div class="tag-container">
+            <span class="tag">Simulation</span>
+          </div>
+          <a href="sandbox-island-war.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Tow N Go -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/390.webp" alt="Tow N Go Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Tow N Go</h2>
+          <p class="card-description">Tow N Go is a thrilling game where you hit the road and become the coolest truck driver. Your mission is to tow cars parked in "No parking" areas and collect as many as you can at once. But beware! It's not an easy job. Avoid crashing into trains or other cars on the road. The more cars you collect, the richer you become. Challenge yourself in this exciting towing adventure and make loads of money today!</p>
+          <div class="tag-container">
+            <span class="tag">Racing & Driving</span>
+<span class="tag">Simulation</span>
+          </div>
+          <a href="tow-n-go.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Clinic Cleanup Crew -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/392.webp" alt="Clinic Cleanup Crew Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Clinic Cleanup Crew</h2>
+          <p class="card-description">Players play the role of cleaners in the health center in the game. They are responsible for the cleaning and sanitation work in all areas within the health center, keeping the environment of the health center clean and hygienic and providing a good environment for clients.
+The game features a fresh and lovely art style, with the details of characters and buildings depicted vividly, bringing players a healing visual enjoyment.</p>
+          <div class="tag-container">
+            <span class="tag">Simulation</span>
+          </div>
+          <a href="clinic-cleanup-crew.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Earwax Clinic -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/396.webp" alt="Earwax Clinic Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Earwax Clinic</h2>
+          <p class="card-description">Welcome to Earwax Clinic, where you will be the best ear-cleaning expert! In this fun and relaxing 3D simulation game, you'll dive into the world of earwax removal. Help patients remove those annoying earwax. Pay attention to making their comfort and satisfaction!</p>
+          <div class="tag-container">
+            <span class="tag">Care</span>
+<span class="tag">Simulation</span>
+          </div>
+          <a href="earwax-clinic.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Battle Simulator - Sandbox -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/397.webp" alt="Battle Simulator - Sandbox Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Battle Simulator - Sandbox</h2>
+          <p class="card-description">You can play against the provided levels or create your own battle.
+
+Victory depends only on the best strategy! With the most accurate placement of your army, you will achieve the best results!</p>
+          <div class="tag-container">
+            <span class="tag">Simulation</span>
+<span class="tag">Strategy</span>
+          </div>
+          <a href="battle-simulator-sandbox.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Night Club Security -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/402.webp" alt="Night Club Security Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Night Club Security</h2>
+          <p class="card-description">Immerse yourself in the unique atmosphere of a security guard simulator inspired by the cult game I'm Security.
+
+Check visitors for prohibited items, decide who is worthy of entry and who is not. Your power is absolute, because you are an unlimited security guard! Use your imagination to have fun and unusual "entertainment" with visitors, leaving them without things or even with a couple of bruises. Everything that happens is in your hands.</p>
+          <div class="tag-container">
+            <span class="tag">Simulation</span>
+          </div>
+          <a href="night-club-security.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Idle Market Tycoon -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/414.webp" alt="Idle Market Tycoon Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Idle Market Tycoon</h2>
+          <p class="card-description">Play Idle Market Tycoon free online and build your shopping empire in a fast-loading browser game you can play instantly with no download and no install. Start small, hire managers, upgrade departments, and grow profits in a smart strategy experience that feels like a rewarding brain game. This unblocked game runs smoothly at school or home and is fully mobile-friendly. Optimized for desktop and mobile, it’s a free online game perfect for quick breaks or long, satisfying tycoon sessions anytime.</p>
+          <div class="tag-container">
+            <span class="tag">Puzzle</span>
+<span class="tag">Simulation</span>
+          </div>
+          <a href="idle-market-tycoon.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Dino Idle Park -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/416.webp" alt="Dino Idle Park Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Dino Idle Park</h2>
+          <p class="card-description">Dino Idle Park is a relaxing leisure real estate tycoon where you create and develop a dinosaur amusement park. Expand plots, release and display dinosaurs, optimize queues and parks, hire staff, and upgrade investments to increase funds and income. Balance safety, visitor happiness, and research to keep the park thriving even when youre away.</p>
+          <div class="tag-container">
+            <span class="tag">Casual</span>
+<span class="tag">Simulation</span>
+          </div>
+          <a href="dino-idle-park.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+    </div>
+    <div class="pagination"><span class="page-link disabled">&laquo; Prev</span><span class="page-link active">1</span><a href="category-simulation-2.html" class="page-link">2</a><a href="category-simulation-3.html" class="page-link">3</a><a href="category-simulation-4.html" class="page-link">4</a><a href="category-simulation-5.html" class="page-link">5</a><a href="category-simulation-2.html" class="page-link page-arrow">Next &raquo;</a></div>
+  </div>
+
+  <footer>
+      <nav class="categories-nav">
+    <div class="categories-container">
+      <a href="index.html" class="category-link ">All Games</a>
+      <a href="category-io.html" class="category-link ">.IO</a>
+      <a href="category-adventure.html" class="category-link ">Adventure</a>
+      <a href="category-agility.html" class="category-link ">Agility</a>
+      <a href="category-art.html" class="category-link ">Art</a>
+      <a href="category-basketball.html" class="category-link ">Basketball</a>
+      <a href="category-battle.html" class="category-link ">Battle</a>
+      <a href="category-boardgames.html" class="category-link ">Boardgames</a>
+      <a href="category-bubble-shooter.html" class="category-link ">Bubble Shooter</a>
+      <a href="category-cards.html" class="category-link ">Cards</a>
+      <a href="category-care.html" class="category-link ">Care</a>
+      <a href="category-casual.html" class="category-link ">Casual</a>
+      <a href="category-cooking.html" class="category-link ">Cooking</a>
+      <a href="category-dress-up.html" class="category-link ">Dress-up</a>
+      <a href="category-educational.html" class="category-link ">Educational</a>
+      <a href="category-football.html" class="category-link ">Football</a>
+      <a href="category-jigsaw.html" class="category-link ">Jigsaw</a>
+      <a href="category-mahjong-connect.html" class="category-link ">Mahjong & Connect</a>
+      <a href="category-match-3.html" class="category-link ">Match-3</a>
+      <a href="category-merge.html" class="category-link ">Merge</a>
+      <a href="category-puzzle.html" class="category-link ">Puzzle</a>
+      <a href="category-quiz.html" class="category-link ">Quiz</a>
+      <a href="category-racing-driving.html" class="category-link ">Racing & Driving</a>
+      <a href="category-shooter.html" class="category-link ">Shooter</a>
+      <a href="category-simulation.html" class="category-link active">Simulation</a>
+      <a href="category-sports.html" class="category-link ">Sports</a>
+      <a href="category-strategy.html" class="category-link ">Strategy</a>
+    </div>
+  </nav>
+    <p style="margin-top: 15px;">&copy; 2026 Simulation Games. Deployed on bitpixelplay.github.io.</p>
+    <div class="footer-links" style="margin-top: 15px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
+  <a href="contact.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Contact Us</a>
+  <span style="color: rgba(255, 255, 255, 0.15);">|</span>
+  <a href="privacy.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Privacy Policy</a>
+  <span style="color: rgba(255, 255, 255, 0.15);">|</span>
+  <a href="terms.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Terms of Service</a>
+</div>
+
+  </footer>
+
+  <script src="ads-manager.js" defer></script>
+  <script src="search.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const topNavToggle = document.getElementById('topNavToggle');
+      const topNavMenu = document.getElementById('topNavMenu');
+      if (topNavToggle && topNavMenu) {
+        topNavToggle.addEventListener('click', () => {
+          topNavMenu.classList.toggle('open');
+          topNavToggle.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

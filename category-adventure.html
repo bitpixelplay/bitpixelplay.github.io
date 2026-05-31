@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventure Games | Play Free Online | bit pixel play</title>
+  <meta name="description" content="Play the best free Adventure games online on bit pixel play. Page 1 of our curated collection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: rgba(22, 28, 45, 0.7);
+      --accent: #6c5ce7;
+      --accent-glow: rgba(108, 92, 231, 0.4);
+      --text-white: #ffffff;
+      --text-gray: #a0aec0;
+      --neon-green: #00f2fe;
+      --neon-pink: #ff007f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: radial-gradient(circle at top, #1a1b36 0%, var(--bg-dark) 70%);
+      color: var(--text-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Top Navbar Styles */
+    .top-navbar {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .top-nav-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-nav-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--text-gray) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .top-nav-logo span {
+      -webkit-text-fill-color: initial;
+    }
+
+    .top-nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-nav-item {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .top-nav-item:hover, .top-nav-item.active {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Dropdown Styles */
+    .top-nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .top-nav-dropdown-btn {
+      background: none;
+      border: none;
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .top-nav-dropdown-btn:hover, .top-nav-dropdown.active .top-nav-dropdown-btn {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .top-nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: #111519;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      z-index: 1010;
+      padding: 8px 0;
+      margin-top: 5px;
+    }
+
+    .top-nav-dropdown-content a {
+      color: var(--text-gray);
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .top-nav-dropdown-content a:hover, .top-nav-dropdown-content a.active {
+      color: var(--text-white);
+      background: var(--accent);
+    }
+
+    .top-nav-dropdown:hover .top-nav-dropdown-content {
+      display: block;
+    }
+
+    /* Toggle button for Mobile */
+    .top-nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1020;
+    }
+
+    .top-nav-toggle .toggle-bar {
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      padding: 15px 20px 8px;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      display: none;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--text-gray) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Categories Navigation inside Footer */
+    .categories-nav {
+      padding: 15px 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .categories-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .category-link {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .category-link:hover, .category-link.active {
+      color: var(--text-white);
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 16px;
+      box-shadow: 0 0 40px var(--accent-glow);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .thumbnail-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      overflow: hidden;
+      background: #000;
+    }
+
+    .thumbnail-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .card:hover .thumbnail-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-white);
+    }
+
+    .card-description {
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-gray);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .play-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--accent);
+      color: var(--text-white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+    }
+
+    .play-btn:hover {
+      background: #7d6ef9;
+      box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+    }
+
+    .play-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 40px;
+      padding: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .page-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-gray);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .page-link:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-white);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .page-link.active {
+      background: var(--accent);
+      color: var(--text-white);
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+    }
+
+    .page-link.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .page-arrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--text-gray);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .top-nav-toggle {
+        display: flex;
+      }
+
+      .top-nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 250px;
+        height: calc(100vh - 70px);
+        background: #0b0f19;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px 20px;
+        gap: 10px;
+        transition: right 0.3s ease;
+        z-index: 999;
+      }
+
+      .top-nav-menu.open {
+        right: 0;
+      }
+
+      .top-nav-item, .top-nav-dropdown-btn {
+        width: 100%;
+        text-align: left;
+        padding: 12px 15px;
+      }
+
+      .top-nav-dropdown-content {
+        position: static;
+        display: block;
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        margin-top: 0;
+        padding-left: 15px;
+      }
+
+      .top-nav-toggle.active .toggle-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .top-nav-toggle.active .toggle-bar:nth-child(2) {
+        opacity: 0;
+      }
+      .top-nav-toggle.active .toggle-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+      .subtitle {
+        font-size: 0.8rem;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="top-navbar">
+    <div class="top-nav-container">
+      <a href="index.html" class="top-nav-logo">
+        <span>🎮</span> bit pixel play
+      </a>
+
+      <button class="top-nav-toggle" id="topNavToggle" aria-label="Toggle menu">
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+      </button>
+      <div class="top-nav-menu" id="topNavMenu">
+        <a href="index.html" class="top-nav-item ">Home</a>
+        <a href="category-casual.html" class="top-nav-item ">Casual</a>
+        <a href="category-puzzle.html" class="top-nav-item ">Puzzle</a>
+        <a href="category-simulation.html" class="top-nav-item ">Simulation</a>
+        <a href="category-adventure.html" class="top-nav-item active">Adventure</a>
+        <a href="category-agility.html" class="top-nav-item ">Agility</a>
+        <a href="category-racing-driving.html" class="top-nav-item ">Racing & Driving</a>
+        <div class="top-nav-dropdown ">
+          <button class="top-nav-dropdown-btn">More ▾</button>
+          <div class="top-nav-dropdown-content">
+            <a href="category-shooter.html" class="">Shooter</a>
+            <a href="category-dress-up.html" class="">Dress-up</a>
+            <a href="category-battle.html" class="">Battle</a>
+            <a href="category-match-3.html" class="">Match-3</a>
+            <a href="category-strategy.html" class="">Strategy</a>
+            <a href="category-merge.html" class="">Merge</a>
+            <a href="category-educational.html" class="">Educational</a>
+            <a href="category-cards.html" class="">Cards</a>
+            <a href="category-mahjong-connect.html" class="">Mahjong & Connect</a>
+            <a href="category-bubble-shooter.html" class="">Bubble Shooter</a>
+            <a href="category-io.html" class="">.IO</a>
+            <a href="category-boardgames.html" class="">Boardgames</a>
+            <a href="category-football.html" class="">Football</a>
+            <a href="category-sports.html" class="">Sports</a>
+            <a href="category-care.html" class="">Care</a>
+            <a href="category-quiz.html" class="">Quiz</a>
+            <a href="category-cooking.html" class="">Cooking</a>
+            <a href="category-basketball.html" class="">Basketball</a>
+            <a href="category-art.html" class="">Art</a>
+            <a href="category-jigsaw.html" class="">Jigsaw</a>
+          </div>
+        </div>
+        <div class="top-nav-dropdown ">
+          <button class="top-nav-dropdown-btn">About ▾</button>
+          <div class="top-nav-dropdown-content">
+            <a href="contact.html" class="">Contact Us</a>
+            <a href="privacy.html" class="">Privacy Policy</a>
+            <a href="terms.html" class="">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Adventure Games</h1>
+    <p class="subtitle">Play the best free Adventure games online on bit pixel play. Page 1 of our curated collection.</p>
+  </header>
+
+    <!-- Dedicated Search Bar Row -->
+  <div class="search-bar-row">
+    <div class="search-bar-row-container">
+      <input type="text" id="searchInput" placeholder="Search for your favorite games..." autocomplete="off">
+      <div id="searchSuggestions" class="search-suggestions"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+            <!-- Card: Noob: Saving friends -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/310.webp" alt="Noob: Saving friends Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Noob: Saving friends</h2>
+          <p class="card-description">"Noob: Saving friends" - An adventure in an interesting and captivating world with Nubik.
+
+Together with Nubik, you will mine and sell ores, buy new pickaxes, upgrade skills, and try to uncover all the secrets! Will you be able to challenge the dragon and earn the maximum coins? Or maybe luck from the lucky block will smile upon you?</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+          </div>
+          <a href="noob-saving-friends.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Zombie Eeaster Bunnies -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/317.webp" alt="Zombie Eeaster Bunnies Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Zombie Eeaster Bunnies</h2>
+          <p class="card-description">You are in abandoned village infested with zombie bunnies. You are there because you love the their delicious colored eggs. You need them, but the evil rabbits won't let you go away with them so easily. Kill or escape from the evil bunnies, collect us many easter eggs as you can and leave the village alive if you can. Use your powerful laser gun to destroy the evil rabbits and collect the ammunition scattered around the village. Watch your back! The Zombie Bunnies are silent and deadly!</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+<span class="tag">Shooter</span>
+          </div>
+          <a href="zombie-eeaster-bunnies.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: HeroBall Adventures 2 -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/328.webp" alt="HeroBall Adventures 2 Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">HeroBall Adventures 2</h2>
+          <p class="card-description">It’s time to embark on a brand new adventure in this great game, this time in a spherical theme! Heroball Adventures 2 is finally here! It’s a fun game where heroball has to save his friends who were abducted by a strange machine on an otherwise calm day. Control the character, jump over obstacles and try to save all of your friends. Be sure to try to get to the end of each level. Collect points and unlock new abilities!</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+<span class="tag">Agility</span>
+          </div>
+          <a href="heroball-adventures-2.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Anomaly Content Record -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/348.webp" alt="Anomaly Content Record Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Anomaly Content Record</h2>
+          <p class="card-description">Welcome to Anomaly Content Record, a terrifying horror adventure where your only goal is to escape and survive. You’re a field investigator sent to explore a restricted research facility that went silent overnight.</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+          </div>
+          <a href="anomaly-content-record.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Fireboy & Watergirl 7: and Friends -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/355.webp" alt="Fireboy & Watergirl 7: and Friends Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Fireboy & Watergirl 7: and Friends</h2>
+          <p class="card-description">Fireboy and Watergirl need help to explore this new temple. This time with 3 new friends that will help them solve the puzzles, beat the times and collect all the diamonds! 
+
+Play alone or with a friend to join Fireboy and Watergirl in this new adventure!
+
+Turn levers and push buttons to complete these 36 new levels of the official Fireboy and Watergirl series.</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+          </div>
+          <a href="fireboy-watergirl-7-and-friends.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Tung Tung Sahur: Obby Challenge -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/362.webp" alt="Tung Tung Sahur: Obby Challenge Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Tung Tung Sahur: Obby Challenge</h2>
+          <p class="card-description">Jump into the viral madness of Tung Tung Sahur: Obby Challenge — a hilarious meme-based platformer where you dodge traps, jump across chaos, and try to survive with style. Inspired by trending TikTok memes, especially the absurd world of Italian Brainrot Animals. Play as the one and only meme legend, Tung Tung Sahur, and conquer chaotic Obby parkour levels like never before.</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+<span class="tag">Agility</span>
+          </div>
+          <a href="tung-tung-sahur-obby-challenge.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Dino Hide N Shoot -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/376.webp" alt="Dino Hide N Shoot Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Dino Hide N Shoot</h2>
+          <p class="card-description">Do you want to begin a fun dinosaur-themed shooting game in Dino Hide N Shoot? Play a brave gunman on an exciting adventure! In this game, you will constantly run to avoid the attack of dinosaurs.And pick up the bullets, accumulate enough firepower. Pay attention to using the box as cover,seize the moment to shoot at the dinosaur! The gameplay is simple yet challenging.</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+<span class="tag">Shooter</span>
+          </div>
+          <a href="dino-hide-n-shoot.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Block Parkour Trials -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/383.webp" alt="Block Parkour Trials Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Block Parkour Trials</h2>
+          <p class="card-description">Block Parkour Trials is a super fun and free-to-play parkour game. Your goal is to reach the portal at the finish line by skillfully jumping over obstacles. Have fun and enjoy the challenge!</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+<span class="tag">Agility</span>
+          </div>
+          <a href="block-parkour-trials.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Jetpack Jump -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/393.webp" alt="Jetpack Jump Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Jetpack Jump</h2>
+          <p class="card-description">Jetpack Jump is a fun and simple casual jumping game that lets you perform Olympic-style jumps with a little help from a jet pack strapped onto your back. Your aim is to jump as many meters as possible, constantly beating your best score. Your athlete will be rewarded generously in coins, which will help you upgrade and fly to even greater heights.</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+          </div>
+          <a href="jetpack-jump.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Rainbow Friends. Survival -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/401.webp" alt="Rainbow Friends. Survival Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Rainbow Friends. Survival</h2>
+          <p class="card-description">A fun and dangerous game about Rainbow Friends!
+You are in a dangerous place. You need to survive 5 days and 5 nights, but the deadly obstacle will be the terrifying and bloodthirsty monsters Rainbow Friends!
+Complete all the missions, move fast, perform actions carefully and run away from the monstrous monsters!</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+          </div>
+          <a href="rainbow-friends-survival.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: The Noob Aventures -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/413.webp" alt="The Noob Aventures Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">The Noob Aventures</h2>
+          <p class="card-description">The Noob Adventures invites you to join a dangerous journey through a colorful world full of action, traps, and enemies. Travel across challenging lands in search of diamonds and overcome all obstacles. Complete 70 levels packed with danger and surprises as you fight enemies determined to stop your progress. Rescue the friends, survive the challenges along the way, and prove that even a noob can become a true hero.
+Collect diamonds and unlock new characters to continue your adventure</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+<span class="tag">Puzzle</span>
+          </div>
+          <a href="the-noob-aventures.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Zombie Raft -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/447.webp" alt="Zombie Raft Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Zombie Raft</h2>
+          <p class="card-description">Zombie Raft is a survival game. The zombie apocalypse is coming and it's time for a raft survival game! Protect yourself and other survivors from the looming zombie tsunami, and push them all back, it's your responsibility to survive on the raft! Squeeze the vehicles forward and push them if necessary! Keep going, escape the zombie tsunami, and conquer the barren land! If stranded survivors are found, you need to rescue them! Join us and experience the best zombie game!</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+          </div>
+          <a href="zombie-raft.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Stickman Punishment -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/461.webp" alt="Stickman Punishment Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Stickman Punishment</h2>
+          <p class="card-description">When a mysterious radiation blast grants Stickman and his friends superpowers, heartbreak quickly turns into a quest for revenge! Betrayed by his best friend over a girl, Stickman discovers he can morph into any shape imaginable. Now, he’s ready to use his new abilities to create chaos and keep the pair apart. Dive into this action-packed story filled with unique animations, clever payback strategies, and endless creativity!</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+          </div>
+          <a href="stickman-punishment.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Robocarpoli -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/464.webp" alt="Robocarpoli Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Robocarpoli</h2>
+          <p class="card-description">In Brooms Town, you must solve four amazing adventures:
+
+Problems with the pipes: 
+In Brooms Town, a water pipe broke and the road is getting flooded. Help the Rescue Team to solve these situations completing 6 games: 
+    • Connect the wires in Jin’s invention
+    • Block the water leaks as soon as possible.
+    • Solve Poli’s maze.
+    • Work in a team with Micky.
+    • Help Roy with the hoses.
+    • Make Bruner as clean as a whistle.</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="robocarpoli.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Geometry Stars -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/475.webp" alt="Geometry Stars Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Geometry Stars</h2>
+          <p class="card-description">Enjoy the Geometry Stars world with a brand new adventure! New levels, new music, new monsters, new everything!. Flex your clicky finger as you jump, fly and flip your way through dark caves and spiky obstacles. Collect many stars as you can to upgrade your famous characters and find the secrets of this Rhythm-based adventure.</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+<span class="tag">Agility</span>
+          </div>
+          <a href="geometry-stars.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Fury Road Zombie Crash -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/488.webp" alt="Fury Road Zombie Crash Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Fury Road Zombie Crash</h2>
+          <p class="card-description">Fury Road Zombie Crash is a 3D game about driving a modified automobile across a zombie-infested landscape. It's enjoyable and addicting, and it came just in time for the apocalypse. In order to remain alive in the face of a zombie apocalypse, you must pilot your preferred vehicle while avoiding the undead. Keep going, race your war vehicle throughout the arena, and annihilate the undead. You can play this and similar games for free on kiz10.com.</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+<span class="tag">Racing & Driving</span>
+          </div>
+          <a href="fury-road-zombie-crash.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Obstacle Car Driving -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/508.webp" alt="Obstacle Car Driving Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Obstacle Car Driving</h2>
+          <p class="card-description">Obstacle Car Driving is an exciting and challenging endless driving game where precision and reflexes are key! Navigate through four unique environments, each packed with unpredictable obstacles that will test your driving skills.
+Choose from four different cars, each with its own handling and performance, and collect in-game currency as you drive. Use your earnings to unlock new vehicles and themes</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+<span class="tag">Racing & Driving</span>
+          </div>
+          <a href="obstacle-car-driving.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Jailbreak. Roblox jumper -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/511.webp" alt="Jailbreak. Roblox jumper Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Jailbreak. Roblox jumper</h2>
+          <p class="card-description">In this thrilling game with a cubic style, the character attempts to escape from prison by progressing through levels, each represented as a separate platform. On each level, you'll need to collect coins that help speed up your escape, but be careful: dangerous traps and obstacles await at every turn. A wrong move or misstep could cost you your life. Navigate through each level, avoid the threats, and move closer to freedom!</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+          </div>
+          <a href="jailbreak-roblox-jumper.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Transformers Battle For The City -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/513.webp" alt="Transformers Battle For The City Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Transformers Battle For The City</h2>
+          <p class="card-description">In this game you will find an open world where you will defend the city from the invasion of robots. If you are a fan of transformers, then you will definitely like this game. 
+In the game you will find 7 full-fledged story tasks, the complexity of which will gradually increase. After receiving the task, you will go to the place of military operations, where you can use various super-techniques to destroy powerful robot villains.</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+<span class="tag">Shooter</span>
+          </div>
+          <a href="transformers-battle-for-the-city.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Solitaires Crime Stories -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/538.webp" alt="Solitaires Crime Stories Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Solitaires Crime Stories</h2>
+          <p class="card-description">Solitaire Crime Stories is an exciting new Solitaire game which will carry you away into a world of fascinating criminal investigations, colorful characters and stunning locations. Test your skills by completing interesting levels and unraveling the   mysteries of the town of Springdale!
+    Springdale is a small American town that lives in peace and quiet... but that’s only at first glance. Everyone hides secrets here, secrets that could tear this carefree town apart.</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+<span class="tag">Cards</span>
+          </div>
+          <a href="solitaires-crime-stories.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+    </div>
+    <div class="pagination"><span class="page-link disabled">&laquo; Prev</span><span class="page-link active">1</span><a href="category-adventure-2.html" class="page-link">2</a><a href="category-adventure-3.html" class="page-link">3</a><a href="category-adventure-4.html" class="page-link">4</a><a href="category-adventure-5.html" class="page-link">5</a><a href="category-adventure-2.html" class="page-link page-arrow">Next &raquo;</a></div>
+  </div>
+
+  <footer>
+      <nav class="categories-nav">
+    <div class="categories-container">
+      <a href="index.html" class="category-link ">All Games</a>
+      <a href="category-io.html" class="category-link ">.IO</a>
+      <a href="category-adventure.html" class="category-link active">Adventure</a>
+      <a href="category-agility.html" class="category-link ">Agility</a>
+      <a href="category-art.html" class="category-link ">Art</a>
+      <a href="category-basketball.html" class="category-link ">Basketball</a>
+      <a href="category-battle.html" class="category-link ">Battle</a>
+      <a href="category-boardgames.html" class="category-link ">Boardgames</a>
+      <a href="category-bubble-shooter.html" class="category-link ">Bubble Shooter</a>
+      <a href="category-cards.html" class="category-link ">Cards</a>
+      <a href="category-care.html" class="category-link ">Care</a>
+      <a href="category-casual.html" class="category-link ">Casual</a>
+      <a href="category-cooking.html" class="category-link ">Cooking</a>
+      <a href="category-dress-up.html" class="category-link ">Dress-up</a>
+      <a href="category-educational.html" class="category-link ">Educational</a>
+      <a href="category-football.html" class="category-link ">Football</a>
+      <a href="category-jigsaw.html" class="category-link ">Jigsaw</a>
+      <a href="category-mahjong-connect.html" class="category-link ">Mahjong & Connect</a>
+      <a href="category-match-3.html" class="category-link ">Match-3</a>
+      <a href="category-merge.html" class="category-link ">Merge</a>
+      <a href="category-puzzle.html" class="category-link ">Puzzle</a>
+      <a href="category-quiz.html" class="category-link ">Quiz</a>
+      <a href="category-racing-driving.html" class="category-link ">Racing & Driving</a>
+      <a href="category-shooter.html" class="category-link ">Shooter</a>
+      <a href="category-simulation.html" class="category-link ">Simulation</a>
+      <a href="category-sports.html" class="category-link ">Sports</a>
+      <a href="category-strategy.html" class="category-link ">Strategy</a>
+    </div>
+  </nav>
+    <p style="margin-top: 15px;">&copy; 2026 Adventure Games. Deployed on bitpixelplay.github.io.</p>
+    <div class="footer-links" style="margin-top: 15px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
+  <a href="contact.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Contact Us</a>
+  <span style="color: rgba(255, 255, 255, 0.15);">|</span>
+  <a href="privacy.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Privacy Policy</a>
+  <span style="color: rgba(255, 255, 255, 0.15);">|</span>
+  <a href="terms.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Terms of Service</a>
+</div>
+
+  </footer>
+
+  <script src="ads-manager.js" defer></script>
+  <script src="search.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const topNavToggle = document.getElementById('topNavToggle');
+      const topNavMenu = document.getElementById('topNavMenu');
+      if (topNavToggle && topNavMenu) {
+        topNavToggle.addEventListener('click', () => {
+          topNavMenu.classList.toggle('open');
+          topNavToggle.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

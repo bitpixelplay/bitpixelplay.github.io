@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shooter Games - Page 3 | Play Free Online | bit pixel play</title>
+  <meta name="description" content="Play the best free Shooter games online on bit pixel play. Page 3 of our curated collection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: rgba(22, 28, 45, 0.7);
+      --accent: #6c5ce7;
+      --accent-glow: rgba(108, 92, 231, 0.4);
+      --text-white: #ffffff;
+      --text-gray: #a0aec0;
+      --neon-green: #00f2fe;
+      --neon-pink: #ff007f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: radial-gradient(circle at top, #1a1b36 0%, var(--bg-dark) 70%);
+      color: var(--text-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Top Navbar Styles */
+    .top-navbar {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .top-nav-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-nav-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--text-gray) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .top-nav-logo span {
+      -webkit-text-fill-color: initial;
+    }
+
+    .top-nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-nav-item {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .top-nav-item:hover, .top-nav-item.active {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Dropdown Styles */
+    .top-nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .top-nav-dropdown-btn {
+      background: none;
+      border: none;
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .top-nav-dropdown-btn:hover, .top-nav-dropdown.active .top-nav-dropdown-btn {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .top-nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: #111519;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      z-index: 1010;
+      padding: 8px 0;
+      margin-top: 5px;
+    }
+
+    .top-nav-dropdown-content a {
+      color: var(--text-gray);
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .top-nav-dropdown-content a:hover, .top-nav-dropdown-content a.active {
+      color: var(--text-white);
+      background: var(--accent);
+    }
+
+    .top-nav-dropdown:hover .top-nav-dropdown-content {
+      display: block;
+    }
+
+    /* Toggle button for Mobile */
+    .top-nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1020;
+    }
+
+    .top-nav-toggle .toggle-bar {
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      padding: 15px 20px 8px;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      display: none;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--text-gray) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Categories Navigation inside Footer */
+    .categories-nav {
+      padding: 15px 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .categories-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .category-link {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .category-link:hover, .category-link.active {
+      color: var(--text-white);
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 16px;
+      box-shadow: 0 0 40px var(--accent-glow);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .thumbnail-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      overflow: hidden;
+      background: #000;
+    }
+
+    .thumbnail-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .card:hover .thumbnail-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-white);
+    }
+
+    .card-description {
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-gray);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .play-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--accent);
+      color: var(--text-white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+    }
+
+    .play-btn:hover {
+      background: #7d6ef9;
+      box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+    }
+
+    .play-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 40px;
+      padding: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .page-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-gray);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .page-link:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-white);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .page-link.active {
+      background: var(--accent);
+      color: var(--text-white);
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+    }
+
+    .page-link.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .page-arrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--text-gray);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .top-nav-toggle {
+        display: flex;
+      }
+
+      .top-nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 250px;
+        height: calc(100vh - 70px);
+        background: #0b0f19;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px 20px;
+        gap: 10px;
+        transition: right 0.3s ease;
+        z-index: 999;
+      }
+
+      .top-nav-menu.open {
+        right: 0;
+      }
+
+      .top-nav-item, .top-nav-dropdown-btn {
+        width: 100%;
+        text-align: left;
+        padding: 12px 15px;
+      }
+
+      .top-nav-dropdown-content {
+        position: static;
+        display: block;
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        margin-top: 0;
+        padding-left: 15px;
+      }
+
+      .top-nav-toggle.active .toggle-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .top-nav-toggle.active .toggle-bar:nth-child(2) {
+        opacity: 0;
+      }
+      .top-nav-toggle.active .toggle-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+      .subtitle {
+        font-size: 0.8rem;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="top-navbar">
+    <div class="top-nav-container">
+      <a href="index.html" class="top-nav-logo">
+        <span>🎮</span> bit pixel play
+      </a>
+
+      <button class="top-nav-toggle" id="topNavToggle" aria-label="Toggle menu">
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+      </button>
+      <div class="top-nav-menu" id="topNavMenu">
+        <a href="index.html" class="top-nav-item ">Home</a>
+        <a href="category-casual.html" class="top-nav-item ">Casual</a>
+        <a href="category-puzzle.html" class="top-nav-item ">Puzzle</a>
+        <a href="category-simulation.html" class="top-nav-item ">Simulation</a>
+        <a href="category-adventure.html" class="top-nav-item ">Adventure</a>
+        <a href="category-agility.html" class="top-nav-item ">Agility</a>
+        <a href="category-racing-driving.html" class="top-nav-item ">Racing & Driving</a>
+        <div class="top-nav-dropdown active">
+          <button class="top-nav-dropdown-btn">More ▾</button>
+          <div class="top-nav-dropdown-content">
+            <a href="category-shooter.html" class="active">Shooter</a>
+            <a href="category-dress-up.html" class="">Dress-up</a>
+            <a href="category-battle.html" class="">Battle</a>
+            <a href="category-match-3.html" class="">Match-3</a>
+            <a href="category-strategy.html" class="">Strategy</a>
+            <a href="category-merge.html" class="">Merge</a>
+            <a href="category-educational.html" class="">Educational</a>
+            <a href="category-cards.html" class="">Cards</a>
+            <a href="category-mahjong-connect.html" class="">Mahjong & Connect</a>
+            <a href="category-bubble-shooter.html" class="">Bubble Shooter</a>
+            <a href="category-io.html" class="">.IO</a>
+            <a href="category-boardgames.html" class="">Boardgames</a>
+            <a href="category-football.html" class="">Football</a>
+            <a href="category-sports.html" class="">Sports</a>
+            <a href="category-care.html" class="">Care</a>
+            <a href="category-quiz.html" class="">Quiz</a>
+            <a href="category-cooking.html" class="">Cooking</a>
+            <a href="category-basketball.html" class="">Basketball</a>
+            <a href="category-art.html" class="">Art</a>
+            <a href="category-jigsaw.html" class="">Jigsaw</a>
+          </div>
+        </div>
+        <div class="top-nav-dropdown ">
+          <button class="top-nav-dropdown-btn">About ▾</button>
+          <div class="top-nav-dropdown-content">
+            <a href="contact.html" class="">Contact Us</a>
+            <a href="privacy.html" class="">Privacy Policy</a>
+            <a href="terms.html" class="">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Shooter Games</h1>
+    <p class="subtitle">Play the best free Shooter games online on bit pixel play. Page 3 of our curated collection.</p>
+  </header>
+
+    <!-- Dedicated Search Bar Row -->
+  <div class="search-bar-row">
+    <div class="search-bar-row-container">
+      <input type="text" id="searchInput" placeholder="Search for your favorite games..." autocomplete="off">
+      <div id="searchSuggestions" class="search-suggestions"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+            <!-- Card: Rift of Hell-Demons War -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/940.webp" alt="Rift of Hell-Demons War Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Rift of Hell-Demons War</h2>
+          <p class="card-description">Hordes of insidious demons are lurking in the hellish catacombs! Can you challenge hundreds of hellish creatures and destroy them all as you descend closer to the citadel?
+You have several types of weapons at your disposal and an almost endless supply of ammo along the way!
+With each step, collecting gold that falls from enemies, you will become stronger and stronger, strength, speed of movement, arsenal of deadly weapons, armor - all this will depend on your actions.</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+          </div>
+          <a href="rift-of-hell-demons-war.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Plants Warfare -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/941.webp" alt="Plants Warfare Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Plants Warfare</h2>
+          <p class="card-description">Plants Warfare is a shooting game where you step into the shoes of the cute plants. Aim your projectiles, and take down the zombies with strategic aiming and precision shots. Use the environment to your advantage—ricochet bullets and eliminate multiple targets with the least shots possible! Collect stars, customize your look, and prove you’re the ultimate plant defense.</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+<span class="tag">Casual</span>
+          </div>
+          <a href="plants-warfare.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Aliens Hunter -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/959.webp" alt="Aliens Hunter Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Aliens Hunter</h2>
+          <p class="card-description">You are an alien hunter and your mission is to use your abilities to find the aliens hidden in the city and use your gun to accurately shoot the aliens to get rewards. Each round has different aliens hiding in different locations. You have to accurately choose, aim and shoot to complete the level mission.</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+<span class="tag">Casual</span>
+          </div>
+          <a href="aliens-hunter.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: ColorWars.io -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1022.webp" alt="ColorWars.io Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">ColorWars.io</h2>
+          <p class="card-description">ColorWars.io is a competitive multiplayer strategy game where players battle for territorial dominance. Expand your color by painting the arena, manage a real-time gold economy to deploy defensive structures, and eliminate rivals by targeting their trails. Balance aggressive expansion with tactical defense to climb the global leaderboard.</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+<span class="tag">.IO</span>
+          </div>
+          <a href="colorwarsio.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Riot Village -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1035.webp" alt="Riot Village Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Riot Village</h2>
+          <p class="card-description">Step into Riot Village, a thrilling browser-based adventure where your shooting skills and strategy are tested. Navigate 10 intense levels with AI enemies. Visit the market to choose from 6 unique weapons and equip up to 4 in your inventory. Switch weapons during gameplay to overcome challenges. The game features automatic character movement, letting you focus on aiming and shooting. Adapt your strategy as each enemy wields different weapons. Are you ready for the challenge?</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+<span class="tag">Battle</span>
+          </div>
+          <a href="riot-village.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: CS: Chaos Squad -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1047.webp" alt="CS: Chaos Squad Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">CS: Chaos Squad</h2>
+          <p class="card-description">CS: Chaos Squad is an exciting 5v5 team-based shooter that demands tactical thinking, teamwork, and quick reflexes. Engage in fast-paced battles where you can purchase weapons and gear each round, allowing you to adapt your strategy on the fly. The ranking system tracks player and team performance, encouraging continuous improvement and competition. Fight for victory, build team synergy, and prove that your squad is the best on the battlefield!</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+          </div>
+          <a href="cs-chaos-squad.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Sandstorm Covert Ops -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1057.webp" alt="Sandstorm Covert Ops Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Sandstorm Covert Ops</h2>
+          <p class="card-description">Welcome to Sandstorm Covert Ops. As the leader of an elite team, your mission is to infiltrate a desert region controlled by a deadly terrorist organization. Navigate harsh terrains, gather crucial intelligence, and execute precise strikes to dismantle the enemy network.</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+          </div>
+          <a href="sandstorm-covert-ops.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Choo Choo Spider Monster Train -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1059.webp" alt="Choo Choo Spider Monster Train Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Choo Choo Spider Monster Train</h2>
+          <p class="card-description">Welcome to the most terrifying train ride of your life!
+Cho-Cho Scary Charles: Spider Train is a chilling open-world survival horror shooter where your only lifeline is a small yellow train armed with a machine gun and a whole lot of courage.
+Face off against Charles — the monstrous spider-train hybrid that haunts a remote island, preying on unsuspecting humans. No one knows where he came from, but one thing is clear — he won't stop until he's fed.</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+<span class="tag">Simulation</span>
+          </div>
+          <a href="choo-choo-spider-monster-train.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Tank Sniper 3D -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1070.webp" alt="Tank Sniper 3D Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Tank Sniper 3D</h2>
+          <p class="card-description">Tank Sniper 3D: The Ultimate Shooting Game
+Are you a fan of shooting games? Do you have what it takes to be a sniper tank driver? Then youll love Tank Sniper 3D - the action game that puts your skills to the test. Shoot your enemies with one shot from behind cover. Stay hidden until you strike with a surprise shot. Then, dodge their fire and hit as many targets as you can. How long can you survive? Find out now and play Tank Sniper 3D!</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+<span class="tag">Casual</span>
+          </div>
+          <a href="tank-sniper-3d.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Broken City Combat -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1079.webp" alt="Broken City Combat Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Broken City Combat</h2>
+          <p class="card-description">Immerse yourself in the chaotic battleground of Broken City Combat, a fast-paced FPS set in a desolate urban warzone. As the city crumbles under relentless attacks, you are tasked with surviving the brutal onslaught while rescuing survivors and taking down ruthless enemies. Navigate through abandoned streets, derelict buildings, and multi-floor complexes, each filled with challenges and surprises.</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+          </div>
+          <a href="broken-city-combat.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: THE KULKA -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1086.webp" alt="THE KULKA Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">THE KULKA</h2>
+          <p class="card-description">THE KULKA is a one-button bullet-heaven arcade game where your single shot evolves into chaos. Inspired by Flappy Birds, Vampire Survivor and Pattern Survivors: Bullet Hell. 
+
+MUTATE YOUR BULLET. FLAP, EVOLVE, SURVIVE.</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+<span class="tag">Casual</span>
+          </div>
+          <a href="the-kulka.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Chicken shooter io -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1088.webp" alt="Chicken shooter io Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Chicken shooter io</h2>
+          <p class="card-description">SUPER COOL SHOOTER game, in which you will plunge into exciting fights with chickens, roosters and chickens. Your task is to choose the best equipment and make full use of your shooting skills to defeat other characters in this feathered battle!</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+<span class="tag">Agility</span>
+          </div>
+          <a href="chicken-shooter-io.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Noob Shooter: Gun Battle 3D -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1103.webp" alt="Noob Shooter: Gun Battle 3D Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Noob Shooter: Gun Battle 3D</h2>
+          <p class="card-description">Noob Shooter: Gun Battle 3D is an exciting cooperative shooter created for true fans of action and intense battles. If you like games like CS, Warface and CoD, then this project will definitely not disappoint you. Join your team and engage in battle against opponents, striving for the main goal - to get as many kills as possible. The team that first reaches the required number of frags will be the winner.</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+          </div>
+          <a href="noob-shooter-gun-battle-3d.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Space Survivor -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1106.webp" alt="Space Survivor Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Space Survivor</h2>
+          <p class="card-description">Jump right into the action, fighting dangerous aliens and executing amazing maneuvers! Sharpen your weapons and skills, you will need them to last as long as possible.</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+          </div>
+          <a href="space-survivor.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Chicken Strike -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1119.webp" alt="Chicken Strike Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Chicken Strike</h2>
+          <p class="card-description">Meet the new exciting third-person shooter - Chicken Strike! Here you will act as a brave chicken who fights with opponents in different conditions. Buy a variety of skins to make your chicken unique. Enjoy jumping like a real chicken. Get ready for intense battles and become a true chicken champion!</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+          </div>
+          <a href="chicken-strike.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Urban Assault Force -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1120.webp" alt="Urban Assault Force Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Urban Assault Force</h2>
+          <p class="card-description">Step into the boots of an elite counter-terrorism unit in Urban Assault Force, an intense first-person shooter that plunges you into the heart of urban warfare. The city is under siege by a ruthless terrorist group, and it's up to you and your team to strike back and save the day.</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+          </div>
+          <a href="urban-assault-force.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Strykon -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1130.webp" alt="Strykon Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Strykon</h2>
+          <p class="card-description">Strykon is a mobile FPS game with exciting missions and battles. Play different modes like Deathmatch, Team Deathmatch, and Free-for-All, where your goal is to survive.
+Choose from many weapons, like pistols, rifles, shotguns, and snipers. Each gun has its own style. Enjoy great graphics, realistic sound, and easy controls. Earn rewards with the Battle Pass to keep the game interesting. Whether you complete missions or fight enemies, this shooter is full of action anytime, anywhere!</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+          </div>
+          <a href="strykon.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Beat The Zombies -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1137.webp" alt="Beat The Zombies Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Beat The Zombies</h2>
+          <p class="card-description">Beat the Zombies is a vertical action RPG blending strategy and adventure. Explore a dangerous plant-zombie world, fight through stages, and defeat all plant zombies in your way!</p>
+          <div class="tag-container">
+            <span class="tag">Adventure</span>
+<span class="tag">Shooter</span>
+          </div>
+          <a href="beat-the-zombies.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Shoot The Bottle -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1147.webp" alt="Shoot The Bottle Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Shoot The Bottle</h2>
+          <p class="card-description">You’re at an abandoned gas station with really nothing else to do. Why not grab a couple rounds to kill time.
+
+In this immersive 3D game, your goal is simple: shoot as many bottles as you can. With limited time, precision, and speed are key to achieving the highest score. 
+
+Tap or click to shoot the bottles. Shoot fast, shoot accurate to get the best score!</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+<span class="tag">Casual</span>
+          </div>
+          <a href="shoot-the-bottle.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Arrow Survival: 15 Seconds -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1148.webp" alt="Arrow Survival: 15 Seconds Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Arrow Survival: 15 Seconds</h2>
+          <p class="card-description">Dodge and shoot to survive 15 seconds! Master 40 levels of arrow chaos in this fast-paced pixel art platformer! 
+
+Dive into Arrow Survival: 15 Seconds, a thrilling 2D pixel art platformer where every second counts! As a skilled archer, your mission is to survive 15 seconds per level by dodging deadly hazards and strategically firing arrows.</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+<span class="tag">Casual</span>
+          </div>
+          <a href="arrow-survival-15-seconds.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+    </div>
+    <div class="pagination"><a href="category-shooter-2.html" class="page-link page-arrow">&laquo; Prev</a><a href="category-shooter.html" class="page-link">1</a><a href="category-shooter-2.html" class="page-link">2</a><span class="page-link active">3</span><a href="category-shooter-4.html" class="page-link">4</a><a href="category-shooter-4.html" class="page-link page-arrow">Next &raquo;</a></div>
+  </div>
+
+  <footer>
+      <nav class="categories-nav">
+    <div class="categories-container">
+      <a href="index.html" class="category-link ">All Games</a>
+      <a href="category-io.html" class="category-link ">.IO</a>
+      <a href="category-adventure.html" class="category-link ">Adventure</a>
+      <a href="category-agility.html" class="category-link ">Agility</a>
+      <a href="category-art.html" class="category-link ">Art</a>
+      <a href="category-basketball.html" class="category-link ">Basketball</a>
+      <a href="category-battle.html" class="category-link ">Battle</a>
+      <a href="category-boardgames.html" class="category-link ">Boardgames</a>
+      <a href="category-bubble-shooter.html" class="category-link ">Bubble Shooter</a>
+      <a href="category-cards.html" class="category-link ">Cards</a>
+      <a href="category-care.html" class="category-link ">Care</a>
+      <a href="category-casual.html" class="category-link ">Casual</a>
+      <a href="category-cooking.html" class="category-link ">Cooking</a>
+      <a href="category-dress-up.html" class="category-link ">Dress-up</a>
+      <a href="category-educational.html" class="category-link ">Educational</a>
+      <a href="category-football.html" class="category-link ">Football</a>
+      <a href="category-jigsaw.html" class="category-link ">Jigsaw</a>
+      <a href="category-mahjong-connect.html" class="category-link ">Mahjong & Connect</a>
+      <a href="category-match-3.html" class="category-link ">Match-3</a>
+      <a href="category-merge.html" class="category-link ">Merge</a>
+      <a href="category-puzzle.html" class="category-link ">Puzzle</a>
+      <a href="category-quiz.html" class="category-link ">Quiz</a>
+      <a href="category-racing-driving.html" class="category-link ">Racing & Driving</a>
+      <a href="category-shooter.html" class="category-link active">Shooter</a>
+      <a href="category-simulation.html" class="category-link ">Simulation</a>
+      <a href="category-sports.html" class="category-link ">Sports</a>
+      <a href="category-strategy.html" class="category-link ">Strategy</a>
+    </div>
+  </nav>
+    <p style="margin-top: 15px;">&copy; 2026 Shooter Games. Deployed on bitpixelplay.github.io.</p>
+    <div class="footer-links" style="margin-top: 15px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
+  <a href="contact.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Contact Us</a>
+  <span style="color: rgba(255, 255, 255, 0.15);">|</span>
+  <a href="privacy.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Privacy Policy</a>
+  <span style="color: rgba(255, 255, 255, 0.15);">|</span>
+  <a href="terms.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Terms of Service</a>
+</div>
+
+  </footer>
+
+  <script src="ads-manager.js" defer></script>
+  <script src="search.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const topNavToggle = document.getElementById('topNavToggle');
+      const topNavMenu = document.getElementById('topNavMenu');
+      if (topNavToggle && topNavMenu) {
+        topNavToggle.addEventListener('click', () => {
+          topNavMenu.classList.toggle('open');
+          topNavToggle.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
